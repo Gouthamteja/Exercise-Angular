@@ -1,0 +1,59 @@
+ <div class="full">
+    <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-4" id="logo">
+              <ul>
+                  <li>N</li>
+                  <li>E</li>
+                  <li>W</li>
+                  <li>S</li>
+              </ul>
+              </div>
+            
+            <div class="col-sm-3 col-sm-offset-4">
+                    <div><a href="#"><span class="glyphicon glyphicon-log-in"></span> view saved headlines</a></div>
+            </div>
+            <div class="col-sm-1">
+                  <div ><a href="#" >log in</a></div>
+            </div> 
+          </div>  
+      </div>   
+
+<br>
+          <div class="container-fluid" id="search">
+            
+            <div class="row">
+            <div class="col-sm-6 col-sm-offset-2">
+                <div id="imaginary_container"> 
+                    <div class="input-group stylish-input-group">
+                        <input #searchBox id="search-box" (keyup)="search(searchBox.value)" type="text" class="form-control"  placeholder="Search For Provider"  >
+                        <span class="input-group-addon">
+                            <button type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>  
+                        </span>
+                    </div>
+                    <div>
+                      <div *ngFor="let provider of providers | async"
+                            (click)="gotoDetail(provider)" class="search-result" >
+                        {{provider.name}}
+                      </div>
+                    </div>
+                </div>
+            </div>
+            </div> 
+          </div>
+
+          <router-outlet></router-outlet>
+  <footer>       
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12;">
+                  <a>all rights reserved @news Corp</a>
+              </div>
+            </div> 
+            </div>
+  </footer> 
+        
+ </div>
+
